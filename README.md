@@ -9,3 +9,5 @@ Steps to take:
 4. `$ meteor`
 
 Open a browser `http://localhost:3000/` 
+
+For issues check [HuBoard](https://huboard.com/TuvokVersatileKolinahr/fussball/#/)
