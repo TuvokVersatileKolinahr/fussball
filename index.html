@@ -5,17 +5,7 @@
 </head>
 <body>
     <div class="container"
-        ng-app="fussball"
-        ng-controller="MainController">
-        <h1>{{test}}</h1>
-        <header>
-        <!-- todo: make directve for form -->
-          <form class="new-player" ng-submit="addPlayer(newPlayer); newPlayer='';">
-              <input ng-model="newPlayer" type="text"
-                      name="text" placeholder="Type to add new players" />
-          </form>
-        </header>
-        <hr>
-        <leader-board></leader-board>
+        ng-app="fussball">
+        <div ui-view=""></div>
     </div>
 </body>
