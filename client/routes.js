@@ -12,6 +12,11 @@
           url: "/newplayer",
           // template: UiRouter.template('newplayer.html')
           template: "<player-form></player-form>"
+        })
+        .state('newgame', {
+          url: "/game",
+          // template: UiRouter.template('newplayer.html')
+          template: "<game></game>"
         });
     }
   ]);

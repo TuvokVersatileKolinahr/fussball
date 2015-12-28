@@ -1,11 +1,16 @@
 <head>
-  <title>Fussball</title>
+  <title>Fußball</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/">
 </head>
 <body>
     <div class="container"
         ng-app="fussball">
-        <div ui-view=""></div>
+        <div ui-view="" class="content"></div>
+        <footer>
+          <a ui-sref="home">Home</a> | 
+          <a ui-sref="newplayer">New player</a> | 
+          <a ui-sref="newgame">New game</a>
+        </footer>
     </div>
 </body>
