@@ -4,12 +4,12 @@
 <div ui-view=""></div>
 <hr>
 Past games<hr>
-<div ng-repeat="game in game.all">
+<div ng-repeat="game in game.finished">
   Team Red:<br>
-  <span>{{game.teamRed.players}}</span><br>
+  <team current="game.teamRed"></team>
   vs.<br>
   Team Blue:<br>
-  <span>{{game.teamBlue.players}}</span><br>
+  <team current="game.teamBlue"></team>
   started at {{game.startDate | ISODate}}<br>
   finished at {{game.endDate | ISODate}}<br>
   <hr>

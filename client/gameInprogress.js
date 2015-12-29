@@ -22,7 +22,7 @@
             this.currentGame = Games.findOne({
               endDate: { $exists: false }
             });            //TODO: lookup player names
-            console.log(this.currentGame);
+            // console.log(this.currentGame);
             return this.currentGame;
           },
           games: () => {

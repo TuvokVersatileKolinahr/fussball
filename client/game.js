@@ -7,7 +7,7 @@
         $reactive(this).attach($scope);
 
         this.helpers({
-          all: () => {
+          finished: () => {
             return Games.find({
               endDate: { $exists: true }
             });
