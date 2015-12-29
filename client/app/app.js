@@ -7,10 +7,6 @@ if (Meteor.isClient) {
   Accounts.ui.config({
     passwordSignupFields: "USERNAME_ONLY"
   });
-
-  function onReady() {
-    angular.bootstrap(document, ['fussball']);
-  }
   
   angular.module('fussball').controller('MainController', ['$scope', function ($scope) {
     $scope.test = "The fußball app";

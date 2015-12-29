@@ -1,2 +1,5 @@
-<match current="game.current"></match>
-<button ng-click="game.finish()">Finish game</button>
+<div ng-show="game.current">
+  <match current="game.current"></match>
+  <button ng-click="game.finish()">Finish game</button>
+</div>
+<div ng-show="!game.current">No game in progress. Create <a ui-sref="game.new">new game</a></div>

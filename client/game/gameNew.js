@@ -1,14 +1,13 @@
-  angular.module('fussball').filter('plist', function() {
-    return function(items, selected) {
-      var filtered = [];
-      for (var i = 0; i < items.length; i++) {
-        var item = items[i];
-        if (selected.indexOf(item.name) == -1)
-          filtered.push(item);
-      }
-      return filtered;
+  angular.module('fussball').filter('excludeFrom',function(){
+    return function(inputArray,filterCriteria){
+      return inputArray.filter(function(item){
+        // if the value of filterCriteria is "falsy", retain the inputArray as it is
+        // then check if the currently checked item in the inputArray is different from the filterCriteria,
+        // if so, keep it in the filtered results
+        return !filterCriteria || !angular.equals(item,filterCriteria);
+      });
     };
-  });
+  })
 
   angular.module('fussball').directive('gameNew', function() {
     return {
@@ -41,7 +40,7 @@
               this.teamBlue.players = [];
             }
           }
-          this.selectedPlayers.push('Jos');
+          this.selectedPlayers.push('Wouter');
           // if (this.players.indexOf(this.redOne) > -1) {
           //   this.players.splice(this.players.indexOf(this.redOne), 1)
           // }
