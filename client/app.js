@@ -2,7 +2,11 @@
 
 if (Meteor.isClient) {
   // This code only runs on the client
-  angular.module('fussball',['angular-meteor', 'ui.router']);
+  angular.module('fussball',['angular-meteor', 'ui.router', 'accounts.ui']);
+
+  Accounts.ui.config({
+    passwordSignupFields: "USERNAME_ONLY"
+  });
 
   angular.module('fussball').controller('MainController', ['$scope', function ($scope) {
     $scope.test = "The fußball app";
