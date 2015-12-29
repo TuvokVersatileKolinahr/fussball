@@ -41,18 +41,6 @@
             }
           }
           this.selectedPlayers.push('Wouter');
-          // if (this.players.indexOf(this.redOne) > -1) {
-          //   this.players.splice(this.players.indexOf(this.redOne), 1)
-          // }
-          // if (this.players.indexOf(this.redTwo) > -1) {
-          //   this.players.splice(this.players.indexOf(this.redTwo), 1)
-          // }
-          // if (this.players.indexOf(this.blueOne) > -1) {
-          //   this.players.splice(this.players.indexOf(this.blueOne), 1)
-          // }
-          // if (this.players.indexOf(this.blueTwo) > -1) {
-          //   this.players.splice(this.players.indexOf(this.blueTwo), 1)
-          // }
         }
 
         this.newGame = () => {
@@ -73,10 +61,8 @@
           teams: () => {
             return Teams.find({});
           },
-          allPlayers: () => {
-            var playerList = Players.find({});
-            this.players = playerList.fetch();
-            return playerList;
+          players: () => {
+            return Players.find({});
           }
         });
       }
