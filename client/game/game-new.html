@@ -1,34 +1,44 @@
 <hr>
 <label for="teamRed">Select team red</label><br>
-<!-- <select name="teamRed" ng-model="game.teamRed" ng-options="team.name for team in game.teams"></select><br> -->
 
-<label for="redPlayerOne">Player one</label><br>
-<select name="redPlayerOne"
-  ng-model="game.redOne"
-  ng-change="game.updateTeam(game.redOne, game.redTwo, 'red')"
-  ng-options="player.name for player in game.players"></select><br>
+  <label for="redPlayerOne">Player one</label>
+  <select name="redPlayerOne"
+    ng-model="game.redOne"
+    ng-change="game.updateTeam(game.redOne, game.redTwo, 'red')"
+    ng-options="player.name for player in game.players | excludeFrom:game.redTwo | excludeFrom:game.blueOne | excludeFrom:game.blueTwo"
+    ng-show="!game.redOne"></select>
+  <span ng-show="game.redOne">{{game.redOne.name}}</span>
+  <br>
 
-<label for="redPlayerTwo">Player two</label><br>
-<select name="redPlayerTwo"
-  ng-model="game.redTwo"
-  ng-change="game.updateTeam(game.redOne, game.redTwo, 'red')"
-  ng-options="player.name for player in game.players"></select><br>
+  <label for="redPlayerTwo"
+    ng-show="game.redOne">Player two</label>
+  <select name="redPlayerTwo"
+    ng-model="game.redTwo"
+    ng-change="game.updateTeam(game.redOne, game.redTwo, 'red')"
+    ng-options="player.name for player in game.players | excludeFrom:game.redOne | excludeFrom:game.blueOne | excludeFrom:game.blueTwo"
+    ng-show="game.redOne && !game.redTwo"></select>
+  <span ng-show="game.redTwo">{{game.redTwo.name}}</span>
 
 <hr>
 <label for="teamBlue">Select team blue</label><br>
-<!-- <select name="teamBlue" ng-model="game.teamBlue" ng-options="team.name for team in game.teams"></select><br> -->
+  
+  <label for="bluePlayerOne">Player one</label>
+  <select name="bluePlayerOne"
+    ng-model="game.blueOne"
+    ng-change="game.updateTeam(game.blueOne, game.blueTwo, 'blue')"
+    ng-options="player.name for player in game.players | excludeFrom:game.redOne | excludeFrom:game.redTwo | excludeFrom:game.blueTwo"
+    ng-show="!game.blueOne"></select>
+  <span ng-show="game.blueOne">{{game.blueOne.name}}</span>
+  <br>
 
-<label for="bluePlayerOne">Player one</label><br>
-<select name="bluePlayerOne"
-  ng-model="game.blueOne"
-  ng-change="game.updateTeam(game.blueOne, game.blueTwo, 'blue')"
-  ng-options="player.name for player in game.players"></select><br>
-
-<label for="bluePlayerTwo">Player two</label><br>
-<select name="bluePlayerTwo"
-  ng-model="game.blueTwo"
-  ng-change="game.updateTeam(game.blueOne, game.blueTwo, 'blue')"
-  ng-options="player.name for player in game.players"></select><br>
+  <label for="bluePlayerTwo"
+    ng-show="game.blueOne">Player two</label>
+  <select name="bluePlayerTwo"
+    ng-model="game.blueTwo"
+    ng-change="game.updateTeam(game.blueOne, game.blueTwo, 'blue')"
+    ng-options="player.name for player in game.players | excludeFrom:game.redOne | excludeFrom:game.redTwo | excludeFrom:game.blueOne"
+    ng-show="game.blueOne && !game.blueTwo"></select>
+  <span ng-show="game.blueTwo">{{game.blueTwo.name}}</span>
 
 <hr>
 <button ng-click="game.newGame()">New game</button>

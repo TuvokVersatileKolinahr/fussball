@@ -1,3 +1,14 @@
+  angular.module('fussball').filter('excludeFrom',function(){
+    return function(inputArray,filterCriteria){
+      return inputArray.filter(function(item){
+        // if the value of filterCriteria is "falsy", retain the inputArray as it is
+        // then check if the currently checked item in the inputArray is different from the filterCriteria,
+        // if so, keep it in the filtered results
+        return !filterCriteria || !angular.equals(item,filterCriteria);
+      });
+    };
+  })
+
   angular.module('fussball').directive('gameNew', function() {
     return {
       restrict: 'E',
@@ -5,12 +16,14 @@
       controllerAs: 'game',
       controller: function($scope, $reactive, $state) {
         $reactive(this).attach($scope);
+
         this.teamRed = {
           players: []
         };
         this.teamBlue = {
           players: []
         };
+        this.selectedPlayers = [];
 
         this.updateTeam = (p1, p2, color) => {
           if (p1 && p2) {
@@ -20,7 +33,26 @@
             } else {
               this.teamBlue.players = [p1._id, p2._id];
             }
+          } else {
+            if (color === 'red') {
+              this.teamRed.players = [];
+            } else {
+              this.teamBlue.players = [];
+            }
           }
+          this.selectedPlayers.push('Wouter');
+          // if (this.players.indexOf(this.redOne) > -1) {
+          //   this.players.splice(this.players.indexOf(this.redOne), 1)
+          // }
+          // if (this.players.indexOf(this.redTwo) > -1) {
+          //   this.players.splice(this.players.indexOf(this.redTwo), 1)
+          // }
+          // if (this.players.indexOf(this.blueOne) > -1) {
+          //   this.players.splice(this.players.indexOf(this.blueOne), 1)
+          // }
+          // if (this.players.indexOf(this.blueTwo) > -1) {
+          //   this.players.splice(this.players.indexOf(this.blueTwo), 1)
+          // }
         }
 
         this.newGame = () => {
@@ -41,8 +73,10 @@
           teams: () => {
             return Teams.find({});
           },
-          players: () => {
-            return Players.find({});
+          allPlayers: () => {
+            var playerList = Players.find({});
+            this.players = playerList.fetch();
+            return playerList;
           }
         });
       }
