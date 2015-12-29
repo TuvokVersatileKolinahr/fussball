@@ -5,12 +5,5 @@
 <hr>
 Past games<hr>
 <div ng-repeat="game in game.finished">
-  Team Red:<br>
-  <team current="game.teamRed"></team>
-  vs.<br>
-  Team Blue:<br>
-  <team current="game.teamBlue"></team>
-  started at {{game.startDate | ISODate}}<br>
-  finished at {{game.endDate | ISODate}}<br>
-  <hr>
+  <match current="game"></match>
 </div>

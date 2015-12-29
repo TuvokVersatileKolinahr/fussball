@@ -6,10 +6,11 @@
       },
       templateUrl: 'client/team.html',
       controllerAs: 'team',
-      controller: function($scope, $reactive, $state) {
+      controller: function($scope, $reactive) {
         $reactive(this).attach($scope);
 
-        console.log($scope.current);
+        this.playerOne = Players.findOne({ _id: $scope.current.players[0] });
+        this.playerTwo = Players.findOne({ _id: $scope.current.players[1] });
 
         this.helpers({
         });
