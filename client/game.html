@@ -1,12 +1,16 @@
 <header>
-  <h1>Create a game</h1>
+  <h1>Game</h1>
 </header>
-<label for="playerOne">Select player one</label><br>
-<select name="playerOne" ng-model="game.playerOne" ng-options="player.name for player in game.players">
-  <!-- <option value="{{player.name}}" ng-repeat="player in game.players | filter:game.playerTwo">{{player.name}}</option> -->
-</select><br>
-<label for="playerTwo">Select player two</label><br>
-<select name="playerTwo" ng-model="game.playerTwo" ng-options="player.name for player in game.players">
-  <!-- <option value="{{player.name}}" ng-repeat="player in game.players | filter:game.playerOne">{{player.name}}</option> -->
-</select><br>
-<button ng-click="game.newGame()">New game</button>
+<div ui-view=""></div>
+<hr>
+Past games<hr>
+<div ng-repeat="game in game.all">
+  Team Red:<br>
+  <span>{{game.teamRed.players}}</span><br>
+  vs.<br>
+  Team Blue:<br>
+  <span>{{game.teamBlue.players}}</span><br>
+  started at {{game.startDate | ISODate}}<br>
+  finished at {{game.endDate | ISODate}}<br>
+  <hr>
+</div>

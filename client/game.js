@@ -3,23 +3,14 @@
       restrict: 'E',
       templateUrl: 'client/game.html',
       controllerAs: 'game',
-      controller: function($scope, $reactive) {
+      controller: function($scope, $reactive, $state) {
         $reactive(this).attach($scope);
 
-        this.newGame = () => {
-
-          console.log('new game... with ' + this.playerOne.name + ' and ' + this.playerTwo.name + '.');
-          Games.insert({
-            playerOne: this.playerOne._id,
-            playerTwo: this.playerTwo._id,
-            startDate: new Date()
-          });
-          return 'New game';
-        }
-        
         this.helpers({
-          players: () => {
-            return Players.find({});
+          all: () => {
+            return Games.find({
+              endDate: { $exists: true }
+            });
           }
         });
       }
