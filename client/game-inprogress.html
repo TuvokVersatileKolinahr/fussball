@@ -1,0 +1,7 @@
+Team Red:<br>
+<span>{{game.current.teamRed.players}}</span><br>
+vs.<br>
+Team Blue:<br>
+<span>{{game.current.teamBlue.players}}</span><br>
+started at {{game.current.startDate | ISODate}}<br>
+<button ng-click="game.finish()">Finish game</button>

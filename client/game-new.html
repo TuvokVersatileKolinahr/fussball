@@ -1,0 +1,34 @@
+<hr>
+<label for="teamRed">Select team red</label><br>
+<!-- <select name="teamRed" ng-model="game.teamRed" ng-options="team.name for team in game.teams"></select><br> -->
+
+<label for="redPlayerOne">Player one</label><br>
+<select name="redPlayerOne"
+  ng-model="game.redOne"
+  ng-change="game.updateTeam(game.redOne, game.redTwo, 'red')"
+  ng-options="player.name for player in game.players"></select><br>
+
+<label for="redPlayerTwo">Player two</label><br>
+<select name="redPlayerTwo"
+  ng-model="game.redTwo"
+  ng-change="game.updateTeam(game.redOne, game.redTwo, 'red')"
+  ng-options="player.name for player in game.players"></select><br>
+
+<hr>
+<label for="teamBlue">Select team blue</label><br>
+<!-- <select name="teamBlue" ng-model="game.teamBlue" ng-options="team.name for team in game.teams"></select><br> -->
+
+<label for="bluePlayerOne">Player one</label><br>
+<select name="bluePlayerOne"
+  ng-model="game.blueOne"
+  ng-change="game.updateTeam(game.blueOne, game.blueTwo, 'blue')"
+  ng-options="player.name for player in game.players"></select><br>
+
+<label for="bluePlayerTwo">Player two</label><br>
+<select name="bluePlayerTwo"
+  ng-model="game.blueTwo"
+  ng-change="game.updateTeam(game.blueOne, game.blueTwo, 'blue')"
+  ng-options="player.name for player in game.players"></select><br>
+
+<hr>
+<button ng-click="game.newGame()">New game</button>
