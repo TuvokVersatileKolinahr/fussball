@@ -1,0 +1,9 @@
+  <div ui-view=""></div>
+  <header>
+    <h1>The leaderboard</h1>
+  </header>
+  <ul>
+    <li ng-repeat="player in leaderBoard.players">
+      {{player.name}} [{{player.elo}}]
+    </li>
+  </ul>

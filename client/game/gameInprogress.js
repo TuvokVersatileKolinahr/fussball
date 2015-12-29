@@ -1,7 +1,7 @@
   angular.module('fussball').directive('gameInprogress', function() {
     return {
       restrict: 'E',
-      templateUrl: 'client/game-inprogress.html',
+      templateUrl: 'client/game/game-inprogress.html',
       controllerAs: 'game',
       controller: function($scope, $reactive, $state) {
         $reactive(this).attach($scope);

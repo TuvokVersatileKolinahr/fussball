@@ -4,7 +4,7 @@
       scope: {
         current: '='
       },
-      templateUrl: 'client/team.html',
+      templateUrl: 'client/players/team.html',
       controllerAs: 'team',
       controller: function($scope, $reactive) {
         $reactive(this).attach($scope);

@@ -8,9 +8,12 @@ if (Meteor.isClient) {
     passwordSignupFields: "USERNAME_ONLY"
   });
 
+  function onReady() {
+    angular.bootstrap(document, ['fussball']);
+  }
+  
   angular.module('fussball').controller('MainController', ['$scope', function ($scope) {
     $scope.test = "The fußball app";
-    // $scope.addPlayer = 
   }]);
 
   angular.module('fussball').filter('ISODate', function() {

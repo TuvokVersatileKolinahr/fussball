@@ -1,7 +1,7 @@
   angular.module('fussball').directive('playerForm', function() {
     return {
       restrict: 'E',
-      templateUrl: 'client/player-form.html',
+      templateUrl: 'client/players/player-form.html',
       controllerAs: 'playerForm',
       controller: function($scope, $reactive) {
         $reactive(this).attach($scope);
