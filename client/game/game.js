@@ -10,7 +10,7 @@
           finished: () => {
             return Games.find({
               endDate: { $exists: true }
-            });
+            }, {sort: {endDate: -1}});
           }
         });
       }

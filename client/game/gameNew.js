@@ -23,7 +23,6 @@
         this.teamBlue = {
           players: []
         };
-        this.selectedPlayers = [];
 
         this.updateTeam = (p1, p2, color) => {
           if (p1 && p2) {
@@ -40,7 +39,6 @@
               this.teamBlue.players = [];
             }
           }
-          this.selectedPlayers.push('Wouter');
         }
 
         this.newGame = () => {
