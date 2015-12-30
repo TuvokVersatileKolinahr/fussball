@@ -1,10 +1,18 @@
 <div class="teams">
   <div class="teamDetail red">
     <team-detail current="current.teamRed._id"></team-detail>
+    <a href
+      ng-click="match.finish(current.teamRed._id)"
+      ng-show="!current.endDate">WIN!</a>
+
   </div>
    vs. 
   <div class="teamDetail blue">
     <team-detail current="current.teamBlue._id"></team-detail>
+    <a href
+      ng-click="match.finish(current.teamBlue._id)"
+      ng-show="!current.endDate">WIN!</a>
+
   </div>
 </div>
 <div class="matchData">

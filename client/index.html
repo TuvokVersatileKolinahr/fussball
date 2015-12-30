@@ -5,14 +5,14 @@
 </head>
 <body>
   <div class="container" ng-app="fussball">
-    <login-buttons></login-buttons><a href="/">HOME</a>
+    <login-buttons></login-buttons>
+
+    <a ui-sref="game.inprogress">Game in progress</a>
+    <a ui-sref="game.new">New game</a>
+    <a ui-sref="team.list">Teams</a>
+    <a ui-sref="players.new">New player</a>
+    <a ui-sref="players">Leaderboard</a>
+
     <div ui-view="" class="content"></div>
-    <footer>
-      <a ui-sref="players">Leaderboard</a> | 
-      <a ui-sref="team.list">Teams</a> | 
-      <a ui-sref="players.new">New player</a> | 
-      <a ui-sref="game.new">New game</a> | 
-      <a ui-sref="game.inprogress">Game in progress</a>
-    </footer>
   </div>
 </body>

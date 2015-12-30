@@ -7,13 +7,6 @@
         $reactive(this).attach($scope);
 
         this.currentGame;
-
-        this.finish = () => {
-          Games.update({_id: this.currentGame._id},
-            {$set: {endDate: new Date()} }
-          );
-          $state.go('game.new');
-        }
         
         this.helpers({
           current: () => {
