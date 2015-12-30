@@ -76,6 +76,22 @@ footer {
 .matchData {
   width: 100%;
   border-bottom: solid 1px black;
+  display: inline-block;
+}
+.winner {
+  background: green;
+  color: white;
+}
+
+.winner:before {
+  content: 'winners';
+}
+
+.loser {
+  background: yellow;
+}
+.loser:before {
+  content: 'losers';
 }
 
 .playButton {
