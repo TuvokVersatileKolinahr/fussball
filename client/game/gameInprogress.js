@@ -9,8 +9,6 @@
         this.currentGame;
 
         this.finish = () => {
-          console.log(this.currentGame);
-          // this.currentGame.endDate = new Date();
           Games.update({_id: this.currentGame._id},
             {$set: {endDate: new Date()} }
           );
@@ -21,8 +19,7 @@
           current: () => {
             this.currentGame = Games.findOne({
               endDate: { $exists: false }
-            });            //TODO: lookup player names
-            // console.log(this.currentGame);
+            });
             return this.currentGame;
           },
           games: () => {

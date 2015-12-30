@@ -43,12 +43,18 @@
 
         this.newGame = () => {
           if (this.teamRed.players.length == 2 && this.teamBlue.players.length == 2) {
-            //TODO: check database for existing team
-            //TODO: create teams
+
+            var tr = Teams.findOne(this.teamRed);
+            if (!tr)
+              tr = Teams.insert(this.teamRed);
+            var tb = Teams.findOne(this.teamBlue);
+            if (!tb)
+              tb = Teams.insert(this.teamBlue);
+
             console.log('new game... with ', this.teamRed, this.teamBlue);
             Games.insert({
-              teamRed: this.teamRed,
-              teamBlue: this.teamBlue,
+              teamRed: tr,
+              teamBlue: tb,
               startDate: new Date()
             });
             $state.go('game.inprogress');

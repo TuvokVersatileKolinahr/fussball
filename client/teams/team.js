@@ -4,15 +4,10 @@
       scope: {
         current: '='
       },
-      templateUrl: 'client/players/team.html',
+      templateUrl: 'client/teams/team.html',
       controllerAs: 'team',
       controller: function($scope, $reactive) {
         $reactive(this).attach($scope);
-
-        if ($scope.current) {
-          this.playerOne = Players.findOne({ _id: $scope.current.players[0] });
-          this.playerTwo = Players.findOne({ _id: $scope.current.players[1] });
-        }
 
         this.helpers({
         });
