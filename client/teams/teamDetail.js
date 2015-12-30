@@ -1,17 +1,21 @@
-  angular.module('fussball').directive('team', function() {
+  angular.module('fussball').directive('teamDetail', function() {
     return {
       restrict: 'E',
       scope: {
         current: '='
       },
-      templateUrl: 'client/players/team.html',
+      templateUrl: 'client/teams/team-detail.html',
       controllerAs: 'team',
-      controller: function($scope, $reactive) {
+      controller: function($scope, $reactive, $stateParams) {
         $reactive(this).attach($scope);
 
         if ($scope.current) {
-          var aTeam = Teams.findOne({ _id: $scope.current });
-          console.log(aTeam);
+          this.id = $scope.current;
+        } else {
+          this.id = $stateParams.teamID;
+        }
+        if (this.id) {
+          var aTeam = Teams.findOne({ _id: this.id });
           this.playerOne = Players.findOne({ _id: aTeam.players[0] });
           this.playerTwo = Players.findOne({ _id: aTeam.players[1] });
         }
