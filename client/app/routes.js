@@ -25,6 +25,10 @@
             url: "/inprogress",
             template: "<game-inprogress></game-inprogress>"
           })
+          .state('game.list', {
+            url: "/list",
+            template: "<game-list></game-list>"
+          })
         // TEAMS
         .state('team', {
           url: '/team',

@@ -57,8 +57,8 @@
 
             console.log('new game... with ', this.teamRed, this.teamBlue);
             Games.insert({
-              teamRed: tr,
-              teamBlue: tb,
+              teamRed: tr._id,
+              teamBlue: tb._id,
               startDate: new Date()
             });
             $state.go('game.inprogress');
