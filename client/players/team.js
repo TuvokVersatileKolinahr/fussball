@@ -10,8 +10,10 @@
         $reactive(this).attach($scope);
 
         if ($scope.current) {
-          this.playerOne = Players.findOne({ _id: $scope.current.players[0] });
-          this.playerTwo = Players.findOne({ _id: $scope.current.players[1] });
+          var aTeam = Teams.findOne({ _id: $scope.current });
+          console.log(aTeam);
+          this.playerOne = Players.findOne({ _id: aTeam.players[0] });
+          this.playerTwo = Players.findOne({ _id: aTeam.players[1] });
         }
 
         this.helpers({
