@@ -45,11 +45,15 @@
           if (this.teamRed.players.length == 2 && this.teamBlue.players.length == 2) {
 
             var tr = Teams.findOne(this.teamRed);
-            if (!tr)
-              tr = Teams.insert(this.teamRed);
+            if (!tr) {
+              tr_id = Teams.insert(this.teamRed);
+              tr = Teams.findOne(tr_id);
+            }
             var tb = Teams.findOne(this.teamBlue);
-            if (!tb)
-              tb = Teams.insert(this.teamBlue);
+            if (!tb) {
+              tb_id = Teams.insert(this.teamBlue);
+              tb = Teams.findOne(tb_id);
+            }
 
             console.log('new game... with ', this.teamRed, this.teamBlue);
             Games.insert({

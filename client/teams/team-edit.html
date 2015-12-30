@@ -1,0 +1,6 @@
+<team-detail current="team._id"></team-detail><br>
+<label for="teamName">Team name:</label>
+<input ng-model="team.teamName" type="text" 
+  name="teamName" placeholder="Type to add teamname"
+   ng-show="$root.currentUser" />
+<button ng-click="team.update()" ng-show="$root.currentUser">Update</button>

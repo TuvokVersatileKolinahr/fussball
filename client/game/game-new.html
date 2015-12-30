@@ -1,44 +1,46 @@
-<hr>
-<label for="teamRed">Select team red</label><br>
+<div class="teams">
+  <div class="teamDetail red">
+    <label for="teamRed"><h3>Select team red</h3></label><br>
 
-  <label for="redPlayerOne">Player one</label>
-  <select name="redPlayerOne"
-    ng-model="game.redOne"
-    ng-change="game.updateTeam(game.redOne, game.redTwo, 'red')"
-    ng-options="player.name for player in game.players | excludeFrom:game.redTwo | excludeFrom:game.blueOne | excludeFrom:game.blueTwo"
-    ng-show="!game.redOne"></select>
-  <span ng-show="game.redOne">{{game.redOne.name}}</span>
-  <br>
+      <label for="redPlayerOne">Player one</label>
+      <select name="redPlayerOne"
+        ng-model="game.redOne"
+        ng-change="game.updateTeam(game.redOne, game.redTwo, 'red')"
+        ng-options="player.name for player in game.players | excludeFrom:game.redTwo | excludeFrom:game.blueOne | excludeFrom:game.blueTwo"
+        ng-show="!game.redOne"></select>
+      <span ng-show="game.redOne">{{game.redOne.name}}</span>
+      <br>
 
-  <label for="redPlayerTwo"
-    ng-show="game.redOne">Player two</label>
-  <select name="redPlayerTwo"
-    ng-model="game.redTwo"
-    ng-change="game.updateTeam(game.redOne, game.redTwo, 'red')"
-    ng-options="player.name for player in game.players | excludeFrom:game.redOne | excludeFrom:game.blueOne | excludeFrom:game.blueTwo"
-    ng-show="game.redOne && !game.redTwo"></select>
-  <span ng-show="game.redTwo">{{game.redTwo.name}}</span>
+      <label for="redPlayerTwo"
+        ng-show="game.redOne">Player two</label>
+      <select name="redPlayerTwo"
+        ng-model="game.redTwo"
+        ng-change="game.updateTeam(game.redOne, game.redTwo, 'red')"
+        ng-options="player.name for player in game.players | excludeFrom:game.redOne | excludeFrom:game.blueOne | excludeFrom:game.blueTwo"
+        ng-show="game.redOne && !game.redTwo"></select>
+      <span ng-show="game.redTwo">{{game.redTwo.name}}</span>
+  </div>
+   vs. 
+  <div class="teamDetail blue">
+    <label for="teamBlue"><h3>Select team blue</h3></label><br>
+      
+      <label for="bluePlayerOne">Player one</label>
+      <select name="bluePlayerOne"
+        ng-model="game.blueOne"
+        ng-change="game.updateTeam(game.blueOne, game.blueTwo, 'blue')"
+        ng-options="player.name for player in game.players | excludeFrom:game.redOne | excludeFrom:game.redTwo | excludeFrom:game.blueTwo"
+        ng-show="!game.blueOne"></select>
+      <span ng-show="game.blueOne">{{game.blueOne.name}}</span>
+      <br>
 
-<hr>
-<label for="teamBlue">Select team blue</label><br>
-  
-  <label for="bluePlayerOne">Player one</label>
-  <select name="bluePlayerOne"
-    ng-model="game.blueOne"
-    ng-change="game.updateTeam(game.blueOne, game.blueTwo, 'blue')"
-    ng-options="player.name for player in game.players | excludeFrom:game.redOne | excludeFrom:game.redTwo | excludeFrom:game.blueTwo"
-    ng-show="!game.blueOne"></select>
-  <span ng-show="game.blueOne">{{game.blueOne.name}}</span>
-  <br>
-
-  <label for="bluePlayerTwo"
-    ng-show="game.blueOne">Player two</label>
-  <select name="bluePlayerTwo"
-    ng-model="game.blueTwo"
-    ng-change="game.updateTeam(game.blueOne, game.blueTwo, 'blue')"
-    ng-options="player.name for player in game.players | excludeFrom:game.redOne | excludeFrom:game.redTwo | excludeFrom:game.blueOne"
-    ng-show="game.blueOne && !game.blueTwo"></select>
-  <span ng-show="game.blueTwo">{{game.blueTwo.name}}</span>
-
-<hr>
-<button ng-click="game.newGame()">New game</button>
+      <label for="bluePlayerTwo"
+        ng-show="game.blueOne">Player two</label>
+      <select name="bluePlayerTwo"
+        ng-model="game.blueTwo"
+        ng-change="game.updateTeam(game.blueOne, game.blueTwo, 'blue')"
+        ng-options="player.name for player in game.players | excludeFrom:game.redOne | excludeFrom:game.redTwo | excludeFrom:game.blueOne"
+        ng-show="game.blueOne && !game.blueTwo"></select>
+      <span ng-show="game.blueTwo">{{game.blueTwo.name}}</span>
+  </div>
+</div>
+<button ng-click="game.newGame()" class="playButton">Play!</button>

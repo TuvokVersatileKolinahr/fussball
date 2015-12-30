@@ -18,6 +18,7 @@
           var aTeam = Teams.findOne({ _id: this.id });
           this.playerOne = Players.findOne({ _id: aTeam.players[0] });
           this.playerTwo = Players.findOne({ _id: aTeam.players[1] });
+          this.teamName = aTeam.teamName;
         }
 
         this.helpers({

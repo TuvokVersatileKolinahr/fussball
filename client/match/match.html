@@ -1,6 +1,17 @@
-<team-detail current="current.teamRed"></team-detail> vs. <team-detail current="current.teamBlue"></team-detail><br>
-started at {{current.startDate | ISODate}}<br>
-<div ng-show="current.endDate">
-  finished at {{current.endDate | ISODate}}
+<div class="teams">
+  <div class="teamDetail red">
+    <team-detail current="current.teamRed._id"></team-detail>
+  </div>
+   vs. 
+  <div class="teamDetail blue">
+    <team-detail current="current.teamBlue._id"></team-detail>
+  </div>
 </div>
-<hr>
+<div class="matchData">
+  <div class="startDate">
+  started at {{current.startDate | ISODate}}
+  </div>
+  <div ng-show="current.endDate" class="endDate">
+    finished at {{current.endDate | ISODate}}
+  </div>
+</div>

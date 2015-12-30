@@ -18,8 +18,7 @@ body {
 }
 
 .content {
-  margin-left: 10px;
-  margin-top: 10px;
+  margin: 10px;
 }
 
 .container {
@@ -48,6 +47,39 @@ footer {
 
 .login-link-text {
   float: right;
+}
+
+.teams {
+  width: 100%;
+  height: 80px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.teamDetail {
+  width: 40%;
+  border: solid 1px;
+  padding-bottom: 10px;
+}
+
+.red {
+  float: left;
+  border-color: red;
+}
+
+.blue {
+  float: right;
+  border-color: blue;
+}
+
+.matchData {
+  width: 100%;
+  border-bottom: solid 1px black;
+}
+
+.playButton {
+  margin-left: 46%;
+  margin-right: 46%;
 }
 
 h1 {

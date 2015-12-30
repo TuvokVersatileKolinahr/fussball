@@ -37,6 +37,10 @@
           .state('team.detail', {
             url: "/detail/:teamID",
             template: "<team-detail></team-detail>"
+          })
+          .state('team.edit', {
+            url: "/edit/:teamID",
+            template: "<team-edit></team-edit>"
           });
     }
   ]);
