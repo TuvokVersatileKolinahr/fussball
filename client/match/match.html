@@ -1,18 +1,20 @@
 <div class="teams">
   <div class="teamDetail red">
     <team-detail current="current.teamRed"></team-detail>
-    <a href
-      ng-click="match.finish(current.teamRed)"
-      ng-show="!current.endDate">WIN!</a>
+
+    <div ng-show="!current.endDate">{{match.scoreRed}}</div>
+    <button ng-show="!current.endDate" ng-click="match.addGoal(current.teamRed)">Goal</button>
+     
     <div ng-show="match.winners._id"
      ng-class="{ winner: match.winners._id == current.teamRed, loser: match.winners._id != current.teamRed }"></div>
   </div>
    vs. 
   <div class="teamDetail blue">
     <team-detail current="current.teamBlue"></team-detail>
-    <a href
-      ng-click="match.finish(current.teamBlue)"
-      ng-show="!current.endDate">WIN!</a>
+
+    <div ng-show="!current.endDate">{{match.scoreBlue}}</div>
+    <button ng-show="!current.endDate" ng-click="match.addGoal(current.teamBlue)">Goal</button>
+     
     <div ng-show="match.winners._id"
      ng-class="{ winner: match.winners._id == current.teamBlue, loser: match.winners._id != current.teamBlue }"></div>
   </div>
