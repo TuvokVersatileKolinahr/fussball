@@ -1,5 +1,5 @@
-# fussball
-A system to keep scores in our fussball matches
+# fußball
+A system to keep scores in our fußball matches
 
 Steps to take:
 
