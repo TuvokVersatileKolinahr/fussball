@@ -6,7 +6,8 @@
     <button ng-show="!current.endDate" ng-click="match.addGoal(current.teamRed)">Goal</button>
      
     <div ng-show="match.winners._id"
-     ng-class="{ winner: match.winners._id == current.teamRed, loser: match.winners._id != current.teamRed }"></div>
+     ng-class="match.winners._id == current.teamRed ? 'winner' : 'loser'"></div>
+
   </div>
    vs. 
   <div class="teamDetail blue">
@@ -16,7 +17,8 @@
     <button ng-show="!current.endDate" ng-click="match.addGoal(current.teamBlue)">Goal</button>
      
     <div ng-show="match.winners._id"
-     ng-class="{ winner: match.winners._id == current.teamBlue, loser: match.winners._id != current.teamBlue }"></div>
+     ng-class="match.winners._id == current.teamBlue ? 'winner' : 'loser'"></div>
+
   </div>
 </div>
 <div class="matchData">
