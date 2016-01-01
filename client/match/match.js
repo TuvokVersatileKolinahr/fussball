@@ -1,48 +1,33 @@
-  angular.module('fussball').directive('match', function() {
-    return {
-      restrict: 'E',
-      scope: {
-        current: '='
-      },
-      templateUrl: 'client/match/match.html',
-      controllerAs: 'match',
-      controller: function($scope, $reactive, $state) {
-        $reactive(this).attach($scope);
+let {Component, View, SetModule, Inject, MeteorReactive} = angular2now;
 
-        if ($scope.current) {
-          this.winners = Teams.findOne({
-            _id: $scope.current.winner
-          });
-        }
+SetModule('fussball');
 
-        this.scoreRed = 0;
-        this.scoreBlue = 0;
+@Component({
+  selector: 'match',
+  properties: [
+    'current'
+  ]
+})
+@View({
+  templateUrl: 'client/match/match.html'
+})
+@MeteorReactive
+class match {
+  current: string;
 
-        this.addGoal = (goal_id) => {
-          if (goal_id == $scope.current.teamRed)
-            this.scoreRed++;
-          if (goal_id == $scope.current.teamBlue)
-            this.scoreBlue++;
-          if (this.scoreRed == 7)
-            this.finish($scope.current.teamRed)
-          if (this.scoreBlue == 7)
-            this.finish($scope.current.teamBlue)
-        }
+  constructor() {
+    this.current = '';
 
-        this.finish = (win_id) => {
-          Games.update({_id: $scope.current._id},
-            {
-              $set: {
-                endDate: new Date(),
-                winner: win_id,
-              }
-            }
-          );
-          $state.go('game.new');
-        }
+    this.helpers({
+    });
+  }
 
-        this.helpers({
-        });
-      }
-    }
-  });
+  addGoal(goal_id) {
+
+    console.log('in game ' + this.current + ' add goal for ' + goal_id)
+  }
+
+  finish(win_id) {
+    console.log(this.current)
+  }
+}
