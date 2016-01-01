@@ -57,3 +57,5 @@ docs/*
 node_modules/*
 reports/*
 src/js/vendor/
+
+packages/pbastowski:angular2-now/

@@ -6,7 +6,15 @@ use development branch of https://github.com/pbastowski/angular2-now/
 
 after cloning the main fussball repo (see step 2) cd into the angular2-now directory in packages:
 
-`$ cd fussball/packages/pbastowski:angular2-now`
+`$ cd fussball`
+
+`$ mkdir packages`
+
+`$ cd packages`
+
+`$ mkdir pbastowski:angular2-now`
+
+`$ cd pbastowski:angular2-now`
 
 then check out the development branch:
 
@@ -14,7 +22,7 @@ then check out the development branch:
 
 `$ git checkout defer-controller-3-decorate`
 
-go back to the main project directory and run meteor as normal.
+go back to the main project directory and run meteor as normal (a.k.a. continue with step 3).
 
 Steps to take:
 
