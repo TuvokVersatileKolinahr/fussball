@@ -10,7 +10,7 @@
           console.log('Adding ' + newPlayer + ' to database.');
           Players.insert({
             name: newPlayer,
-            elo: 100,
+            elo: 1500,
             joinDate: new Date()
           });
         };
