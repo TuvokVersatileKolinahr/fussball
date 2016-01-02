@@ -64,8 +64,8 @@
           let bluep1 = Players.findOne({ _id: blue.players[0] });
           let bluep2 = Players.findOne({ _id: blue.players[1] });
 
-          redelo = redp1.elo + redp2.elo;
-          blueelo = bluep1.elo + bluep2.elo;
+          redelo = (redp1.elo + redp2.elo)/2;
+          blueelo = (bluep1.elo + bluep2.elo)/2;
 
           var elochanged = calculateELORatingChange(redelo, blueelo, 150);
           console.log(elochanged);
