@@ -67,7 +67,7 @@
           redelo = redp1.elo + redp2.elo;
           blueelo = bluep1.elo + bluep2.elo;
 
-          var elochanged = calculateELORatingChange(redelo, blueelo, 10);
+          var elochanged = calculateELORatingChange(redelo, blueelo, 150);
           console.log(elochanged);
 
           if (red._id == win_id) {
