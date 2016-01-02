@@ -44,12 +44,12 @@
         this.newGame = () => {
           if (this.teamRed.players.length == 2 && this.teamBlue.players.length == 2) {
 
-            var tr = Teams.findOne(this.teamRed);
+            var tr = Teams.findOne( { $and: [ { players: { $in: [this.teamRed.players[0]] } }, { players: { $in: [this.teamRed.players[1]] } } ] } );
             if (!tr) {
               tr_id = Teams.insert(this.teamRed);
               tr = Teams.findOne(tr_id);
             }
-            var tb = Teams.findOne(this.teamBlue);
+            var tb = Teams.findOne( { $and: [ { players: { $in: [this.teamBlue.players[0]] } }, { players: { $in: [this.teamBlue.players[1]] } } ] } );
             if (!tb) {
               tb_id = Teams.insert(this.teamBlue);
               tb = Teams.findOne(tb_id);

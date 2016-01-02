@@ -8,7 +8,7 @@
  
         this.helpers({
           players: () => {
-            return Players.find({});
+            return Players.find({}, { sort: { elo: -1 } });
           }
         });
       }
