@@ -1,31 +1,31 @@
-<div class="teams">
-  <div class="teamDetail red">
+<div class="teams row">
+  <div class="teamDetail red col-md-3">
     <team-detail current="current.teamRed"></team-detail>
 
-    <div ng-show="!current.endDate">{{match.scoreRed}}</div>
-    <button ng-show="!current.endDate" ng-click="match.addGoal(current.teamRed)">Goal</button>
-     
-    <div ng-show="match.winners._id"
-     ng-class="match.winners._id == current.teamRed ? 'winner' : 'loser'"></div>
-
+    <button type="button" class="btn btn-default pull-right" ng-show="!current.endDate" ng-click="match.addGoal(current.teamRed)"><span class="glyphicon glyphicon-plus"></span></button>
   </div>
-   vs. 
-  <div class="teamDetail blue">
+  <div class="col-md-1" ng-show="!current.endDate"><h1>{{match.scoreRed}}</h1></div>
+  <div class="col-md-1"><span ng-show="match.winners._id"
+     ng-class="match.winners._id == current.teamRed ? 'glyphicon glyphicon-thumbs-up' : 'glyphicon glyphicon-thumbs-down'"></span>
+  </div>
+  <div class="col-md-2"><h1>vs.</h1></div>
+  <div class="teamDetail blue col-md-3">
     <team-detail current="current.teamBlue"></team-detail>
 
-    <div ng-show="!current.endDate">{{match.scoreBlue}}</div>
-    <button ng-show="!current.endDate" ng-click="match.addGoal(current.teamBlue)">Goal</button>
-     
-    <div ng-show="match.winners._id"
-     ng-class="match.winners._id == current.teamBlue ? 'winner' : 'loser'"></div>
-
+    <button type="button" class="btn btn-default pull-right" ng-show="!current.endDate" ng-click="match.addGoal(current.teamBlue)"><span class="glyphicon glyphicon-plus"></span></button>
+  </div>
+  <div class="col-md-1" ng-show="!current.endDate"><h1>{{match.scoreBlue}}</h1></div>
+  <div class="col-md-1"><span ng-show="match.winners._id"
+     ng-class="match.winners._id == current.teamBlue ? 'glyphicon glyphicon-thumbs-up' : 'glyphicon glyphicon-thumbs-down'"></span>
   </div>
 </div>
-<div class="matchData">
-  <div class="startDate">
-  started at {{current.startDate | ISODate}}
-  </div>
-  <div ng-show="current.endDate" class="endDate">
-    finished at {{current.endDate | ISODate}}
+<div class="matchData row">
+  <div class="panel panel-default">
+    <div class="startDate text-primary">
+    started at {{current.startDate | ISODate}}
+    </div>
+    <div ng-show="current.endDate text-success" class="endDate">
+      finished at {{current.endDate | ISODate}}
+    </div>
   </div>
 </div>

@@ -21,17 +21,19 @@
           this.teamName = aTeam.teamName;
         }
         this.update = () => {
-          if (this.teamName) {
-            Teams.update({_id: this.id},
-              {$set: {teamName: this.teamName } }
-            );
-          } else {
-            Teams.update({_id: this.id},
-              {$unset: {teamName: "" } }
-            );
+          if (Meteor.userId()) {
+            if (this.teamName) {
+              Teams.update({_id: this.id},
+                {$set: {teamName: this.teamName } }
+              );
+            } else {
+              Teams.update({_id: this.id},
+                {$unset: {teamName: "" } }
+              );
+            }
+            // Refresh this state to get all data in the right places
+            $state.go($state.current, $stateParams, {reload: true});
           }
-          // Refresh this state to get all data in the right places
-          $state.go($state.current, $stateParams, {reload: true});
         }
 
         this.helpers({

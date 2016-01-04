@@ -1,5 +1,5 @@
-<div class="teams">
-  <div class="teamDetail red">
+<div class="teams row">
+  <div class="teamDetail red danger col-md-5">
     <label for="teamRed"><h3>Select team red</h3></label><br>
 
       <label for="redPlayerOne">Player one</label>
@@ -20,8 +20,8 @@
         ng-show="game.redOne && !game.redTwo"></select>
       <span ng-show="game.redTwo">{{game.redTwo.name}}</span>
   </div>
-   vs. 
-  <div class="teamDetail blue">
+  <div class="col-md-2">vs.</div>
+  <div class="teamDetail blue info col-md-5">
     <label for="teamBlue"><h3>Select team blue</h3></label><br>
       
       <label for="bluePlayerOne">Player one</label>
@@ -43,4 +43,7 @@
       <span ng-show="game.blueTwo">{{game.blueTwo.name}}</span>
   </div>
 </div>
-<button ng-click="game.newGame()" class="playButton">Play!</button>
+<div class="row">
+  <button ng-click="game.newGame()" type="button" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-play" aria-hidden="true"></span> Play!</button>
+  <button type="button" class="btn btn-link btn-sm" ng-click="game.reset()"><span class="glyphicon glyphicon-trash"></span> Reset</button>
+</div>

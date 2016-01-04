@@ -18,6 +18,7 @@
 let modulesToLoad = [
   'angular-meteor',
   'ui.router',
+  'ui.bootstrap',
   'accounts.ui'
 ];
 

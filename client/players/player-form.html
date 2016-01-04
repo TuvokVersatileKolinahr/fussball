@@ -1,7 +1,13 @@
 <header>
   <h1>Add new player</h1>
 </header>
-  <form class="new-player" ng-submit="playerForm.addPlayer(newPlayer); newPlayer='';">
-      <input ng-model="newPlayer" type="text"
-              name="text" placeholder="Type to add new players" />
+  <form class="new-player form-inline" ng-submit="playerForm.addPlayer(newPlayer); newPlayer='';">
+    <div class="form-group">
+      <label class="sr-only" for="playerName">Player name</label>
+      <div class="input-group">
+        <div class="input-group-addon"></div>
+        <input ng-model="newPlayer" type="text" name="text" class="form-control" id="playerName" placeholder="Type to add new players' name" />
+        <div class="input-group-addon"></div>
+      </div>
+    </div>
   </form>

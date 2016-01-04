@@ -41,6 +41,17 @@
           }
         }
 
+        this.reset = () => {
+          console.log('Resetting game ... ');
+          this.redOne = this.redTwo = this.blueOne = this.blueTwo = undefined;
+          this.teamRed = {
+            players: []
+          };
+          this.teamBlue = {
+            players: []
+          };
+        }
+
         this.newGame = () => {
           if (this.teamRed.players.length == 2 && this.teamBlue.players.length == 2) {
 
