@@ -12,6 +12,10 @@
             url: "/new",
             template: "<player-form></player-form>"
           })
+          .state('players.edit', {
+            url: "/edit/:playerID",
+            template: "<player-edit></player-edit>"
+          })
         // GAMES
         .state('game', {
           url: "/game",

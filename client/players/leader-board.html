@@ -7,10 +7,14 @@
       <th>Rank</th>
       <th>Player name</th>
       <th>Elo</th>
+      <th ng-show="$root.currentUser"></th>
+      <th ng-show="$root.currentUser"></th>
     </tr>
     <tr ng-repeat="player in leaderBoard.players" ng-class="{success:$first}">
       <td>{{$index + 1}}</td>
       <td>{{player.name}}</td>
       <td>{{player.elo}}</td>
+      <td ng-show="$root.currentUser"><a ui-sref="players.edit({ playerID: player._id })"><span class="glyphicon glyphicon-edit"></span></a></td>
+      <td ng-show="$root.currentUser"><a ui-sref="player.delete({ playerID: player._id })"><span class="glyphicon glyphicon-trash"></span></a></td>
     </tr>
   </table>
