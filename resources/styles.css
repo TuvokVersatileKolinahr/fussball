@@ -1,2 +1,14 @@
 /* CSS declarations go here */
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+body {
+  background: url(/images/background-index.jpg) no-repeat scroll center center;
+  background-size: cover;
+}
+html, body, .content {
+  height: 100%;
+}
+
+.container {
+  background-color: whitesmoke;
+  opacity: 0.8;
+}

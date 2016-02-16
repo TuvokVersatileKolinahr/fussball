@@ -9,14 +9,16 @@
       controller: function($scope, $reactive, $state) {
         $reactive(this).attach($scope);
 
-        if ($scope.current) {
+        if ($scope.current && $scope.current.endDate) {
           this.winners = Teams.findOne({
             _id: $scope.current.winner
           });
+          this.scoreRed = $scope.current.scoreRed;
+          this.scoreBlue = $scope.current.scoreBlue;
+        } else {
+          this.scoreRed = 0;
+          this.scoreBlue = 0;
         }
-
-        this.scoreRed = 0;
-        this.scoreBlue = 0;
 
         this.addGoal = (goal_id) => {
           if (goal_id == $scope.current.teamRed)
@@ -24,9 +26,9 @@
           if (goal_id == $scope.current.teamBlue)
             this.scoreBlue++;
           if (this.scoreRed == 7)
-            this.finish($scope.current.teamRed)
+            this.finish($scope.current.teamRed, this.scoreRed, this.scoreBlue)
           if (this.scoreBlue == 7)
-            this.finish($scope.current.teamBlue)
+            this.finish($scope.current.teamBlue, this.scoreRed, this.scoreBlue)
         }
 
         /**
@@ -46,12 +48,14 @@
           };
         }
 
-        this.finish = (win_id) => {
+        this.finish = (win_id, score_red, score_blue) => {
           Games.update({_id: $scope.current._id},
             {
               $set: {
                 endDate: new Date(),
                 winner: win_id,
+                scoreRed: score_red,
+                scoreBlue: score_blue
               }
             }
           );

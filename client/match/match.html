@@ -6,7 +6,7 @@
   </div>
   <div class="col-md-1" ng-show="!current.endDate"><h1>{{match.scoreRed}}</h1></div>
   <div class="col-md-1"><span ng-show="match.winners._id"
-     ng-class="match.winners._id == current.teamRed ? 'glyphicon glyphicon-thumbs-up' : 'glyphicon glyphicon-thumbs-down'"></span>
+     ng-class="match.winners._id == current.teamRed ? 'glyphicon glyphicon-thumbs-up' : 'glyphicon glyphicon-thumbs-down'">{{match.scoreRed}}</span>
   </div>
   <div class="col-md-2"><h1>vs.</h1></div>
   <div class="teamDetail blue col-md-3">
@@ -16,7 +16,7 @@
   </div>
   <div class="col-md-1" ng-show="!current.endDate"><h1>{{match.scoreBlue}}</h1></div>
   <div class="col-md-1"><span ng-show="match.winners._id"
-     ng-class="match.winners._id == current.teamBlue ? 'glyphicon glyphicon-thumbs-up' : 'glyphicon glyphicon-thumbs-down'"></span>
+     ng-class="match.winners._id == current.teamBlue ? 'glyphicon glyphicon-thumbs-up' : 'glyphicon glyphicon-thumbs-down'">{{match.scoreBlue}}</span>
   </div>
 </div>
 <div class="matchData row">
